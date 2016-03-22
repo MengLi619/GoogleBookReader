@@ -11,6 +11,5 @@
     <context:property-placeholder location="classpath:app.properties"/>
 
     <import resource="classpath:spring/spring-data.xml"/>
-    <import resource="classpath:spring/spring-security.xml"/>
 
 </beans>
