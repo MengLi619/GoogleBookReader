@@ -4,8 +4,6 @@ public class Volume {
 
     private String id;
     private VolumeInfo volumeInfo = new VolumeInfo();
-    private String description;
-    private ImageLinks imageLinks = new ImageLinks();
 
     public String getId() {
         return id;
@@ -21,21 +19,5 @@ public class Volume {
 
     public void setVolumeInfo(VolumeInfo volumeInfo) {
         this.volumeInfo = volumeInfo;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public ImageLinks getImageLinks() {
-        return imageLinks;
-    }
-
-    public void setImageLinks(ImageLinks imageLinks) {
-        this.imageLinks = imageLinks;
     }
 }

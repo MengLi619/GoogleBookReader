@@ -25,12 +25,12 @@ public class BookService {
         this.googleBookApi = googleBookApi;
     }
 
-    public void importByQuery(String query) {
+    public void importByQuery(String query, int startIndex, int maxResults) {
 
         try {
-            createBooks(googleBookApi.getVolumes(query).execute().body())
+            createBooks(googleBookApi.getVolumes(query, startIndex, maxResults).execute().body())
                     .forEach(x -> {
-                        if (!bookRepository.existsByGoogleBookId(x.getGoogleBookId())) {
+                        if (bookRepository.findByGoogleBookId(x.getGoogleBookId()) == null) {
                             bookRepository.save(x);
                         }
                     });
@@ -46,8 +46,8 @@ public class BookService {
                     Book book = new Book();
                     book.setGoogleBookId(x.getId());
                     book.setTitle(x.getVolumeInfo().getTitle());
-                    book.setDescription(x.getDescription());
-                    book.setImage(x.getImageLinks().getThumbnail());
+                    book.setDescription(x.getVolumeInfo().getDescription());
+                    book.setImage(x.getVolumeInfo().getImageLinks().getThumbnail());
 
                     return book;
                 })
