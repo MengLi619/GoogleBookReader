@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,8 +27,16 @@ public class BookService {
 
     public void importByQuery(String query) {
 
-        createBooks(googleBookApi.getVolumes(query))
-                .forEach(bookRepository::save);
+        try {
+            createBooks(googleBookApi.getVolumes(query).execute().body())
+                    .forEach(x -> {
+                        if (!bookRepository.existsByGoogleBookId(x.getGoogleBookId())) {
+                            bookRepository.save(x);
+                        }
+                    });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private List<Book> createBooks(Volumes volumes) {

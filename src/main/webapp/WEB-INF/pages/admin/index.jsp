@@ -8,7 +8,7 @@
     <title>bookstore</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/admin/import">
+<form action="${pageContext.request.contextPath}/admin/import" method="post">
     <div>
         <label for="query">查询关键字：</label>
         <input type="text" id="query" name="query" style="width: 200px"/>

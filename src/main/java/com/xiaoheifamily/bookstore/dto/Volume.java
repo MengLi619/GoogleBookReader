@@ -3,9 +3,9 @@ package com.xiaoheifamily.bookstore.dto;
 public class Volume {
 
     private String id;
-    private VolumeInfo volumeInfo;
+    private VolumeInfo volumeInfo = new VolumeInfo();
     private String description;
-    private ImageLinks imageLinks;
+    private ImageLinks imageLinks = new ImageLinks();
 
     public String getId() {
         return id;

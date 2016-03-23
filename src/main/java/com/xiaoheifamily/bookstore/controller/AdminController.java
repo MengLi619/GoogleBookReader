@@ -26,6 +26,6 @@ public class AdminController {
     public String importByQuery(String query) {
 
         bookService.importByQuery(query);
-        return "redirect:/admin/index";
+        return "redirect:/admin";
     }
 }
