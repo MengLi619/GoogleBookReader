@@ -5,9 +5,18 @@ import javax.persistence.Entity;
 @Entity
 public class Book extends EntityBase {
 
+    private String googleBookId;
     private String title;
     private String description;
     private String image;
+
+    public String getGoogleBookId() {
+        return googleBookId;
+    }
+
+    public void setGoogleBookId(String googleBookId) {
+        this.googleBookId = googleBookId;
+    }
 
     public String getTitle() {
         return title;

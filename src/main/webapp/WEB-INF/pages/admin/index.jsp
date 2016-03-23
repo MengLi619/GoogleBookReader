@@ -10,8 +10,8 @@
 <body>
 <form action="${pageContext.request.contextPath}/admin/import">
     <div>
-        <label for="url">导入Url：</label>
-        <input type="text" id="url" name="url" style="width: 200px"/>
+        <label for="query">查询关键字：</label>
+        <input type="text" id="query" name="query" style="width: 200px"/>
     </div>
     <div>
         <input type="submit" value="导入"/>
