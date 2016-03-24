@@ -1,12 +1,14 @@
 package com.xiaoheifamily.bookstore.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 @Entity
 public class Book extends EntityBase {
 
     private String googleBookId;
     private String title;
+    @Lob
     private String description;
     private String image;
 
