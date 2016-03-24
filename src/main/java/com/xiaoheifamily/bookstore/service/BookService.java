@@ -15,6 +15,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,15 +24,18 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final GoogleBookApi googleBookApi;
-    private final String imagePath;
+    private final String storagePath;
+    private final String relativePath;
 
     @Autowired
     public BookService(BookRepository bookRepository, GoogleBookApi googleBookApi,
-                       @Value("${image.path}") String imagePath) {
+                       @Value("${image.storagePath}") String storagePath,
+                       @Value("${image.relativePath}") String relativePath) {
 
         this.bookRepository = bookRepository;
         this.googleBookApi = googleBookApi;
-        this.imagePath = imagePath;
+        this.storagePath = storagePath;
+        this.relativePath = relativePath;
     }
 
     public void importByQuery(String query, int startIndex, int maxResults, HttpServletRequest request) {
@@ -46,6 +50,10 @@ public class BookService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getImagePath(String name) {
+        return Paths.get(storagePath, name).toString();
     }
 
     private List<Book> createBooks(Volumes volumes, HttpServletRequest request) {
@@ -67,9 +75,12 @@ public class BookService {
 
         try {
             String basePath = request.getServletContext().getRealPath("/");
-            Files.copy(new URL(url).openStream(), Paths.get(basePath, imagePath));
+            String fileName = UUID.randomUUID().toString();
 
-            return getBaseUrl(request) + imagePath;
+            Files.createDirectories(Paths.get(storagePath));
+            Files.copy(new URL(url).openStream(), Paths.get(storagePath, fileName));
+
+            return getBaseUrl(request) + relativePath + fileName;
 
         } catch (IOException e) {
             throw new RuntimeException(e);

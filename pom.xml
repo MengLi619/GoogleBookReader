@@ -146,7 +146,7 @@
                 </excludes>
             </resource>
         </resources>
-        
+
         <plugins>
 
             <plugin>
