@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.UUID;
 
 @Service
 public class ImageService {
@@ -29,15 +29,17 @@ public class ImageService {
         return Paths.get(storagePath, name).toString();
     }
 
-    public String saveImage(String url, HttpServletRequest request) {
+    public String saveImage(String url, String name, HttpServletRequest request) {
 
         try {
-            String fileName = UUID.randomUUID().toString();
-
             Files.createDirectories(Paths.get(storagePath));
-            Files.copy(new URL(url).openStream(), Paths.get(storagePath, fileName));
 
-            return getBaseUrl(request) + relativePath + fileName;
+            Path imagePath = Paths.get(storagePath, name);
+            if (!Files.exists(imagePath)) {
+                Files.copy(new URL(url).openStream(), Paths.get(storagePath, name));
+            }
+
+            return getBaseUrl(request) + relativePath + name;
 
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -5,6 +5,7 @@ import com.xiaoheifamily.bookstore.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,11 @@ public class BookController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Book> query(String query, int page, int size, HttpServletRequest request) {
+    public List<Book> query(@RequestParam String query,
+                            @RequestParam(defaultValue = "0") int page,
+                            @RequestParam(defaultValue = "10") int size,
+                            HttpServletRequest request) {
+
         return bookService.query(query, page, size, request);
     }
 }

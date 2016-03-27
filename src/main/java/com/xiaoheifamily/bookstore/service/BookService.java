@@ -26,7 +26,7 @@ public class BookService {
         this.googleBookApi = googleBookApi;
     }
 
-    @Cacheable
+    @Cacheable(value = "books", key = "'books:'+ #query + ':' + #page + ':' + #size")
     public List<Book> query(String query, int page, int size, HttpServletRequest request) {
 
         try {
@@ -37,7 +37,8 @@ public class BookService {
                         book.setId(x.getId());
                         book.setTitle(x.getVolumeInfo().getTitle());
                         book.setDescription(x.getVolumeInfo().getDescription());
-                        book.setImage(imageService.saveImage(x.getVolumeInfo().getImageLinks().getThumbnail(), request));
+                        book.setImage(imageService.saveImage(x.getVolumeInfo().getImageLinks().getThumbnail(),
+                                book.getId(), request));
 
                         return book;
                     })
