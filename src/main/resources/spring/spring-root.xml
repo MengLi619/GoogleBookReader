@@ -13,6 +13,6 @@
         <context:exclude-filter type="regex" expression="com\.xiaoheifamily\.bookstore\.controller.*"/>
     </context:component-scan>
 
-    <import resource="classpath:spring/spring-data.xml"/>
+    <import resource="classpath:spring/spring-cache.xml"/>
 
 </beans>

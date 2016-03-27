@@ -1,23 +1,18 @@
 package com.xiaoheifamily.bookstore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Lob;
+public class Book {
 
-@Entity
-public class Book extends EntityBase {
-
-    private String googleBookId;
+    private String id;
     private String title;
-    @Lob
     private String description;
     private String image;
 
-    public String getGoogleBookId() {
-        return googleBookId;
+    public String getId() {
+        return id;
     }
 
-    public void setGoogleBookId(String googleBookId) {
-        this.googleBookId = googleBookId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

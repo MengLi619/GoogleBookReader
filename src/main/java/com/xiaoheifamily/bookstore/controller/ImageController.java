@@ -1,6 +1,6 @@
 package com.xiaoheifamily.bookstore.controller;
 
-import com.xiaoheifamily.bookstore.service.BookService;
+import com.xiaoheifamily.bookstore.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,11 +20,11 @@ import java.nio.file.Paths;
 @RequestMapping("/image")
 public class ImageController {
 
-    private final BookService bookService;
+    private final ImageService imageService;
 
     @Autowired
-    public ImageController(BookService bookService) {
-        this.bookService = bookService;
+    public ImageController(ImageService imageService) {
+        this.imageService = imageService;
     }
 
     @RequestMapping("/{name}")
@@ -34,7 +34,7 @@ public class ImageController {
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_PNG);
 
-        return new ResponseEntity<>(Files.readAllBytes(Paths.get(bookService.getImagePath(name))),
+        return new ResponseEntity<>(Files.readAllBytes(Paths.get(imageService.getImagePath(name))),
                 headers, HttpStatus.OK);
     }
 }
