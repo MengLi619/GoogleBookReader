@@ -1,6 +1,6 @@
-package com.xiaoheifamily.bookstore.webapi;
+package com.xiaoheifamily.googlebookreader.webapi;
 
-import com.xiaoheifamily.bookstore.dto.Volumes;
+import com.xiaoheifamily.googlebookreader.dto.Volumes;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

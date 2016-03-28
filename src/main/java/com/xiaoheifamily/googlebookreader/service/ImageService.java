@@ -1,8 +1,9 @@
-package com.xiaoheifamily.bookstore.service;
+package com.xiaoheifamily.googlebookreader.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -30,6 +31,10 @@ public class ImageService {
     }
 
     public String saveImage(String url, String name, HttpServletRequest request) {
+
+        if (StringUtils.isEmpty(url)) {
+            return null;
+        }
 
         try {
             Files.createDirectories(Paths.get(storagePath));

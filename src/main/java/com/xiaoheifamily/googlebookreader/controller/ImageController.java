@@ -1,6 +1,6 @@
-package com.xiaoheifamily.bookstore.controller;
+package com.xiaoheifamily.googlebookreader.controller;
 
-import com.xiaoheifamily.bookstore.service.ImageService;
+import com.xiaoheifamily.googlebookreader.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

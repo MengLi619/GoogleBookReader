@@ -1,4 +1,4 @@
-package com.xiaoheifamily.bookstore.dto;
+package com.xiaoheifamily.googlebookreader.dto;
 
 public class VolumeInfo {
 

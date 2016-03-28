@@ -1,7 +1,7 @@
-package com.xiaoheifamily.bookstore.controller;
+package com.xiaoheifamily.googlebookreader.controller;
 
-import com.xiaoheifamily.bookstore.model.Book;
-import com.xiaoheifamily.bookstore.service.BookService;
+import com.xiaoheifamily.googlebookreader.model.Book;
+import com.xiaoheifamily.googlebookreader.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

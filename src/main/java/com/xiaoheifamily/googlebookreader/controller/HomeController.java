@@ -1,4 +1,4 @@
-package com.xiaoheifamily.bookstore.controller;
+package com.xiaoheifamily.googlebookreader.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

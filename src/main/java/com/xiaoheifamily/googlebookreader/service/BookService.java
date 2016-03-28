@@ -1,7 +1,7 @@
-package com.xiaoheifamily.bookstore.service;
+package com.xiaoheifamily.googlebookreader.service;
 
-import com.xiaoheifamily.bookstore.model.Book;
-import com.xiaoheifamily.bookstore.webapi.GoogleBookApi;
+import com.xiaoheifamily.googlebookreader.model.Book;
+import com.xiaoheifamily.googlebookreader.webapi.GoogleBookApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

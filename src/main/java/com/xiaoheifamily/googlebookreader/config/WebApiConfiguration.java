@@ -1,6 +1,6 @@
-package com.xiaoheifamily.bookstore.config;
+package com.xiaoheifamily.googlebookreader.config;
 
-import com.xiaoheifamily.bookstore.webapi.GoogleBookApi;
+import com.xiaoheifamily.googlebookreader.webapi.GoogleBookApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import retrofit2.Retrofit;

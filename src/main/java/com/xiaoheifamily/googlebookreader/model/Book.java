@@ -1,4 +1,4 @@
-package com.xiaoheifamily.bookstore.model;
+package com.xiaoheifamily.googlebookreader.model;
 
 import java.io.Serializable;
 
