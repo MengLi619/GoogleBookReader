@@ -1,3 +1,3 @@
-# bookstore
-A demo project to create a online book store.
-Not finished yet.
+# GoogleBookReader
+
+* A sample service application for [GoogleBookReader-android](https://github.com/dream83619/GoogleBookReader-android)
