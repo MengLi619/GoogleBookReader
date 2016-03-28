@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="bookstore:war exploded">
-    <output-path>$PROJECT_DIR$/target/bookstore</output-path>
+  <artifact type="exploded-war" name="google-book-reader:war exploded">
+    <output-path>$PROJECT_DIR$/target/google-book-reader</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="GoogleBookReader" />
+          <element id="module-output" name="google-book-reader" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
@@ -34,9 +34,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/bookstore/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/google-book-reader/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="GoogleBookReader/web/Web" />
+      <element id="javaee-facet-resources" facet="google-book-reader/web/Web" />
     </root>
   </artifact>
 </component>

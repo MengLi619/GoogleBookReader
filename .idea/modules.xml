@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GoogleBookReader.iml" filepath="$PROJECT_DIR$/GoogleBookReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-book-reader.iml" filepath="$PROJECT_DIR$/google-book-reader.iml" />
     </modules>
   </component>
 </project>

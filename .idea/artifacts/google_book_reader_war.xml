@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="GoogleBookReader:war">
+  <artifact type="war" name="google-book-reader:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="google-book-reader.war">
-      <element id="artifact" artifact-name="GoogleBookReader:war exploded" />
+      <element id="artifact" artifact-name="google-book-reader:war exploded" />
     </root>
   </artifact>
 </component>

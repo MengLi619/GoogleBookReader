@@ -17,13 +17,6 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
-      <profile default="false" name="Annotation profile for bookstore" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="bookstore" />
-      </profile>
       <profile default="false" name="Annotation profile for google-book-reader" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
@@ -31,18 +24,9 @@
         <processorPath useClasspath="true" />
         <module name="google-book-reader" />
       </profile>
-      <profile default="false" name="Annotation profile for GoogleBookReader" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="GoogleBookReader" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bookstore" target="1.8" />
       <module name="google-book-reader" target="1.8" />
-      <module name="GoogleBookReader" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
